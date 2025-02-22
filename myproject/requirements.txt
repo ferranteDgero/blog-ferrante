@@ -1,0 +1,7 @@
+Django==5.0
+Pillow==10.0.0  # para lo de imagenes
+django-crispy-forms==2.1  # estetisismo
+django-allauth==0.58.2  # redes
+psycopg2-binary==2.9.9 
+gunicorn==21.2.0  # producción
+whitenoise==6.6.0  # archivos 

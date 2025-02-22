@@ -1,0 +1,15 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<h1>Bienvenido a la Tienda de Armas</h1>
+<p>Explora nuestra colección de armas de alta calidad.</p>
+<a href="{% url 'product_list' %}" class="btn btn-primary">Ver Productos</a>
+
+{% if user.is_authenticated %}
+    <p>Hola, {{ user.username }}!</p>
+    <a href="{% url 'logout' %}" class="btn btn-danger">Cerrar sesión</a>
+{% else %}
+    <a href="{% url 'login' %}" class="btn btn-success">Iniciar sesión</a>
+    <a href="{% url 'register' %}" class="btn btn-info">Registrarse</a>
+{% endif %}
+{% endblock %}
