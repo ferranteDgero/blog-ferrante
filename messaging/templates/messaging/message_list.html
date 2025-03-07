@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Mensajes Recibidos</h1>
+{% if messages %}
+    {% for message in messages %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2>De: {{ message.sender.username }}</h2>
+                <p>{{ message.content }}</p>
+                <small>{{ message.timestamp }}</small>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No tienes mensajes.</p>
+{% endif %}
+<a href="{% url 'message_send' %}" class="btn btn-primary">Enviar Mensaje</a>
+{% endblock %}

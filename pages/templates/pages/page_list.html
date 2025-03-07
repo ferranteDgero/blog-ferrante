@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Todas las Publicaciones</h1>
+{% if pages %}
+    {% for page in pages %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2>{{ page.title }}</h2>
+                <p>{{ page.content|truncatewords:30 }}</p>
+                <a href="{% url 'page_detail' page.id %}" class="btn btn-primary">Leer más</a>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No hay páginas aún.</p>
+{% endif %}
+{% endblock %}
